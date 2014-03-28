@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<error-map-config>
+	<operation-names>
+		<error-maps>
+			<operation-name>DISESubscription</operation-name>
+			<dest-error-code>viewbusinesscustomerusage-36560-3002-E</dest-error-code>
+			<source-error-code-desc>Subscription Number is invalid</source-error-code-desc>
+			<dest-error-code-desc>Subscription number provided is invalid.</dest-error-code-desc>
+			<source-error-codes>SUBSCRIPTION_NUMBER_IS_INVALID</source-error-codes>
+		</error-maps>
+		<error-maps>
+			<operation-name>DISESubscription</operation-name>
+			<dest-error-code>viewbusinesscustomerusage-36560-3002-E</dest-error-code>
+			<source-error-code-desc>Subscription Number is invalid</source-error-code-desc>
+			<dest-error-code-desc>Subscription number provided is invalid.</dest-error-code-desc>
+			<source-error-codes>SUBSCRIPTION_NUMBER_IS_INVALID</source-error-codes>
+		</error-maps>
+		<operation>getUnbilledUsage</operation>
+	</operation-names>
+	<operation-names>
+		<error-maps>
+			<operation-name>DISESubscription</operation-name>
+			<dest-error-code>viewbusinesscustomerusage-36560-3002-E</dest-error-code>
+			<source-error-code-desc>Subscription Number is invalid</source-error-code-desc>
+			<dest-error-code-desc>Subscription number provided is invalid.</dest-error-code-desc>
+			<source-error-codes>SUBSCRIPTION_NUMBER_IS_INVALID</source-error-codes>
+		</error-maps>
+		<operation>getAllowance</operation>
+	</operation-names>
+	<service-name>ManageQuota</service-name>
+</error-map-config>

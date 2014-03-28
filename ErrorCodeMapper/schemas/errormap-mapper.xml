@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="windows-1252"?>
+
+<!--
+    Document   : errormap-mapper.xml.xml
+    Created on : March 16, 2010, 10:07 PM
+    Author     : Pavan
+    Description:
+        Purpose of the document follows.
+-->
+<!--DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN"
+                         "http://castor.org/mapping.dtd"-->
+<mapping>
+    <class name="thbs.atri.errorcodemapper.Common">
+        
+        <field name="errorMaps"
+           type="thbs.atri.errorcodemapper.ErrorMap">
+            <bind-xml name="errorMap" node="element" collection="array"/>
+        </field>
+    </class>
+    <class name="thbs.atri.errorcodemapper.ErrorMap">
+        <map-to xml="errorMap" ns-uri="http://soa.o2.co.uk/config/ErrorMapConfig" ns-prefix="ec" />
+        <field name="sourceErrorCodes"
+           type="string" collection="array">
+            <bind-xml name="code" location="sourceErrorCodes"/>
+        </field>
+        <field name="destErrorCodeDesc"
+           type="string" direct="true">
+            <bind-xml name="description" node="element" location="destErrorCode"/>
+        </field>
+        <field name="destErrorCode"
+           type="string" direct="true">
+            <bind-xml name="code" node="element" location="destErrorCode"/>
+        </field>
+    </class>
+    <class name="thbs.atri.errorcodemapper.Operation">
+        <map-to xml="operation" ns-uri="http://soa.o2.co.uk/config/ErrorMapConfig" ns-prefix="ec" />
+        <field name="operation"
+           type="string">
+            <bind-xml name="name" node="attribute"/>
+        </field>
+        <field name="errorMaps"
+           type="thbs.atri.errorcodemapper.ErrorMap">
+            <bind-xml name="errorMap" collection="array" node="element"/>
+        </field>
+    </class>
+    <class name="thbs.atri.errorcodemapper.ErrorMapConfig">
+        <map-to xml="errorMapConfig" ns-uri="http://soa.o2.co.uk/config/ErrorMapConfig" ns-prefix="ec"/>
+        <field name="operationNames" type="thbs.atri.errorcodemapper.Operation">
+            <bind-xml name="operation" node="element"  collection="array" location="service" />
+        </field>
+        <field name="serviceName"
+           type="string" direct="true">
+            <bind-xml name="name" node="attribute" location="service"/>
+        </field>
+        <field name="commonMap" type="thbs.atri.errorcodemapper.Common">
+            <bind-xml name="commonMap" node="element" location="service" />
+        </field>
+    </class>
+</mapping>
